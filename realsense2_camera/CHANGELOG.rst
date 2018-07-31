@@ -2,8 +2,8 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+10.0.0 (2018-07-30)
+-------------------
 * Merge pull request `#5 <https://github.com/MisoRobotics/realsense/issues/5>`_ from MisoRobotics/fix/cmake-release
   Fixed realsense not building in Release mode
 * Fixed realsense not building in Release mode
