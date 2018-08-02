@@ -2,8 +2,8 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+10.0.1 (2018-08-02)
+-------------------
 * Merge pull request `#10 <https://github.com/MisoRobotics/realsense/issues/10>`_ from MisoRobotics/feature/reset-exception
   Hardware reset of realsense on exception
 * Merge pull request `#8 <https://github.com/MisoRobotics/realsense/issues/8>`_ from MisoRobotics/release/10.0.0
