@@ -139,6 +139,10 @@ void RealSenseNodeFactory::onInit()
     catch(const std::exception& ex)
     {
         ROS_ERROR_STREAM("An exception has been thrown: " << ex.what());
+
+        ROS_ERROR("Reset Device...");
+        _device.hardware_reset();
+
         throw;
     }
     catch(...)
