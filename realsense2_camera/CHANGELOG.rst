@@ -2,8 +2,8 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+10.0.2 (2018-08-29)
+-------------------
 * Merge pull request `#13 <https://github.com/MisoRobotics/realsense/issues/13>`_ from MisoRobotics/feature/ir-marker
   Feature/ir marker
   Add toggle for IR and RGB pointcloud and change default params
