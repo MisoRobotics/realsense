@@ -79,6 +79,9 @@ Processing enabled by this node:
   <arg name="enable_sync"         default="true"/>
   <arg name="align_depth"         default="true"/>
 
+  <arg name="pc_rgb"              default="true"/>
+  <arg name="pc_ir"               default="true"/>
+
   <!-- rgbd_launch specific arguments -->
 
   <!-- Arguments for remapping all device namespaces -->
@@ -88,6 +91,8 @@ Processing enabled by this node:
   <arg name="depth_registered_pub"            default="depth_registered" />
   <arg name="depth_registered"                default="depth_registered" unless="$(arg align_depth)" />
   <arg name="depth_registered"                default="aligned_depth_to_color" if="$(arg align_depth)" />
+  <arg name="depth_ir_registered_pub"         default="depth_ir_registered" />
+  <arg name="depth_ir_registered"             default="aligned_depth_to_infra1" if="$(arg align_depth)" />
   <arg name="depth_registered_filtered"       default="$(arg depth_registered)" />
   <arg name="projector"                       default="projector" />
 
@@ -148,6 +153,8 @@ Processing enabled by this node:
       <arg name="gyro_fps"                 value="$(arg gyro_fps)"/>
       <arg name="accel_fps"                value="$(arg accel_fps)"/>
       <arg name="enable_imu"               value="$(arg enable_imu)"/>
+
+      <arg name="respawn"                  value="$(arg respawn)" />
     </include>
 
     <!-- RGB processing -->
@@ -179,14 +186,34 @@ Processing enabled by this node:
     </group>
 
     <group if="$(eval depth_registered_processing and hw_registered_processing)">
-      <!-- Publish registered XYZRGB point cloud with hardware registered input (ROS Realsense depth alignment) -->
-      <node pkg="nodelet" type="nodelet" name="points_xyzrgb_hw_registered"
-            args="load depth_image_proc/point_cloud_xyzrgb $(arg manager) $(arg bond)" respawn="$(arg respawn)">
-        <remap from="rgb/image_rect_color"        to="$(arg rgb)/image_rect_color" />
-        <remap from="rgb/camera_info"             to="$(arg rgb)/camera_info" />
-        <remap from="depth_registered/image_rect" to="$(arg depth_registered)/image_raw" />
-        <remap from="depth_registered/points"     to="$(arg depth_registered_pub)/points" />
-      </node>
+      <group if="$(arg pc_rgb)">
+        <!-- Publish registered XYZRGB point cloud with hardware registered input (ROS Realsense depth alignment) -->
+        <node pkg="nodelet" type="nodelet" name="points_xyzrgb_hw_registered"
+              args="load depth_image_proc/point_cloud_xyzrgb $(arg manager) $(arg bond)" respawn="$(arg respawn)">
+          <remap from="rgb/image_rect_color"        to="$(arg rgb)/image_rect_color" />
+          <remap from="rgb/camera_info"             to="$(arg rgb)/camera_info" />
+          <remap from="depth_registered/image_rect" to="$(arg depth_registered)/image_raw" />
+          <remap from="depth_registered/points"     to="$(arg depth_registered_pub)/points" />
+        </node>
+      </group>
+
+      <group if="$(arg pc_ir)">
+        <!-- Convert IR from mono to color image -->
+        <node pkg="realsense2_camera" type="mono_to_color.py" name="mono_to_color" respawn="$(arg respawn)">
+          <param name="mono_image_topic" value="$(arg ir)/image_rect_raw"/>
+          <param name="color_image_topic" value="$(arg ir)/image_color"/>
+          <param name="frame_id" value="$(arg namespace)/camera_depth_optical_frame"/>
+        </node>
+
+        <!-- Publish registered XYZ IR point cloud with hardware registered input (ROS Realsense depth alignment) -->
+        <node pkg="nodelet" type="nodelet" name="points_xyz_ir1_hw_registered"
+              args="load depth_image_proc/point_cloud_xyzrgb $(arg manager) $(arg bond)" respawn="$(arg respawn)">
+          <remap from="rgb/image_rect_color"        to="$(arg ir)/image_color" />
+          <remap from="rgb/camera_info"             to="$(arg ir)/camera_info" />
+          <remap from="depth_registered/image_rect" to="$(arg depth)/image_rect_raw" />
+          <remap from="depth_registered/points"     to="$(arg depth_ir_registered_pub)/points" />
+        </node>
+      </group>
     </group>
 
   </group>
