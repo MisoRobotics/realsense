@@ -2,8 +2,8 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+10.0.3 (2018-09-14)
+-------------------
 * Merge pull request `#16 <https://github.com/MisoRobotics/realsense/issues/16>`_ from MisoRobotics/feature/disable-static-tfs
   Disable static transform publishing
 * Disable static transform publishing
