@@ -87,7 +87,10 @@ void BaseRealSenseNode::publishTopics()
     setupDevice();
     setupPublishers();
     setupStreams();
-    publishStaticTransforms();
+
+    // NOTE: This is done in Miso software now.
+    //publishStaticTransforms();
+
     ROS_INFO_STREAM("RealSense Node Is Up!");
 }
 
