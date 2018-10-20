@@ -2,6 +2,17 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#19 <https://github.com/MisoRobotics/realsense/issues/19>`_ from MisoRobotics/feature/disable-emitter
+  Disable RealSense emitter by default
+* Disable RealSense emitter by default
+  The projected IR pattern is interfering with marker detection now that
+  the markers are closer to the cameras.
+* Merge pull request `#18 <https://github.com/MisoRobotics/realsense/issues/18>`_ from MisoRobotics/release/10.0.3
+  Release/10.0.3
+* Contributors: Ryan Sinnet, Zach Z-V
+
 10.0.3 (2018-09-14)
 -------------------
 * Merge pull request `#16 <https://github.com/MisoRobotics/realsense/issues/16>`_ from MisoRobotics/feature/disable-static-tfs
