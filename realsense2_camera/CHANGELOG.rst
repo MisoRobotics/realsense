@@ -2,8 +2,8 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+10.0.4 (2018-10-19)
+-------------------
 * Merge pull request `#19 <https://github.com/MisoRobotics/realsense/issues/19>`_ from MisoRobotics/feature/disable-emitter
   Disable RealSense emitter by default
 * Disable RealSense emitter by default
