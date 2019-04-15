@@ -31,17 +31,16 @@ class MonoToColor(object):
 
     def __image_callback(self, mono_image_msg):
         try:
-            mono_image = self.__bridge.imgmsg_to_cv2(
-                mono_image_msg, 'passthrough')
+            mono_image = self.__bridge.imgmsg_to_cv2(mono_image_msg,
+                                                     'passthrough')
             color_image = cv2.cvtColor(mono_image, cv2.COLOR_GRAY2RGB)
             color_image_msg = self.__bridge.cv2_to_imgmsg(color_image, 'rgb8')
-            rospy.loginfo('Converted mono to color image.')
             color_image_msg.header = mono_image_msg.header
             if self.__frame_id:
                 color_image_msg.header.frame_id = self.__frame_id
             self.__color_image_pub.publish(color_image_msg)
         except CvBridgeError as e:
-            rospy.logerr(e)
+            rospy.logerr('Failed to convert mono to color image. Error: %s', e)
 
 
 if __name__ == '__main__':
