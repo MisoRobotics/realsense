@@ -2,6 +2,17 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#22 <https://github.com/MisoRobotics/realsense/issues/22>`_ from MisoRobotics/user/zzv/fix/convert-log
+  Remove log message in gray to color conversion
+* Remove log message in gray to color conversion
+  This log really gives us no information and is filling the logs
+  making it difficult to find more important information.
+* Merge pull request `#21 <https://github.com/MisoRobotics/realsense/issues/21>`_ from MisoRobotics/release/10.0.4
+  release/10.0.4
+* Contributors: Nikita Kosolobov, Ryan Sinnet, Zach Z-V
+
 10.0.4 (2018-10-19)
 -------------------
 * Merge pull request `#19 <https://github.com/MisoRobotics/realsense/issues/19>`_ from MisoRobotics/feature/disable-emitter
