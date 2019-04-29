@@ -2,8 +2,8 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+10.0.5 (2019-04-29)
+-------------------
 * Merge pull request `#22 <https://github.com/MisoRobotics/realsense/issues/22>`_ from MisoRobotics/user/zzv/fix/convert-log
   Remove log message in gray to color conversion
 * Remove log message in gray to color conversion
