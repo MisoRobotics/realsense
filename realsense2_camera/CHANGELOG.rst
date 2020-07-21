@@ -2,8 +2,8 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+10.0.6 (2020-07-21)
+-------------------
 * Merge pull request `#27 <https://github.com/MisoRobotics/realsense/issues/27>`_ from MisoRobotics/user/ash/fix/emitter-issue
   Change default setting for RealSense emitters
 * Change default setting for RealSense emitters
