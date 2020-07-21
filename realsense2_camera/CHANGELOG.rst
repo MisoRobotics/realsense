@@ -2,6 +2,21 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+10.0.6 (2020-07-21)
+-------------------
+* Merge pull request `#27 <https://github.com/MisoRobotics/realsense/issues/27>`_ from MisoRobotics/user/ash/fix/emitter-issue
+  Change default setting for RealSense emitters
+* Change default setting for RealSense emitters
+  The IR emitters for a RealSense camera was set to off by default.
+  For some reason, this default setting was not working, and in order
+  to turn the emitters off we had to toggle the emitters twice. By
+  keeping them on by default, we can turn them off with only one toggle
+  which is done in `chippy.rosinstall` for Frybot. The Grillbot needs
+  them to be on.
+* Merge pull request `#25 <https://github.com/MisoRobotics/realsense/issues/25>`_ from MisoRobotics/master
+  Merge master back into develop
+* Contributors: Nikita Kosolobov, Shreyash Gotee, Zach Zweig Vinegar
+
 10.0.5 (2019-04-29)
 -------------------
 * Merge pull request `#22 <https://github.com/MisoRobotics/realsense/issues/22>`_ from MisoRobotics/user/zzv/fix/convert-log
