@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>realsense2_camera</name>
+  <version>10.0.6</version>
+  <description>RealSense Camera package allowing access to Intel 3D D400 cameras</description>
+  <maintainer email="sergey.dorodnicov@intel.com">Sergey Dorodnicov</maintainer>
+  <maintainer email="itay.carpis@intel.com">Itay Carpis</maintainer>
+  <license>Apache 2.0</license>
+  
+  <url type="website">http://www.ros.org/wiki/RealSense</url>
+  <url type="bugtracker">https://github.com/intel-ros/realsense/issues</url>
+
+  <author email="sergey.dorodnicov@intel.com">Sergey Dorodnicov</author>
+  <author email="itay.carpis@intel.com">Itay Carpis</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>diagnostic_updater</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>genmsg</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>nodelet</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf</build_depend>
+
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>diagnostic_updater</exec_depend>
+  <exec_depend>dynamic_reconfigure</exec_depend>
+  <exec_depend>genmsg</exec_depend>
+  <exec_depend>image_transport</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>nodelet</exec_depend>  
+  <exec_depend>rgbd_launch</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>tf</exec_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/nodelet_plugins.xml" />
+  </export>
+</package>
