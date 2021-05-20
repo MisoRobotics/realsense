@@ -2,6 +2,14 @@
 Changelog for package realsense2_camera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#30 <https://github.com/MisoRobotics/realsense/issues/30>`_ from MisoRobotics/user/rsinnet/feature/update-cmake
+  Update CMake minimum version to 3.5
+* Add cloudbuild.yaml
+  Add gitlint with Google Cloud Build.
+* Contributors: Ryan Sinnet
+
 10.0.6 (2020-07-21)
 -------------------
 * Merge pull request `#27 <https://github.com/MisoRobotics/realsense/issues/27>`_ from MisoRobotics/user/ash/fix/emitter-issue
