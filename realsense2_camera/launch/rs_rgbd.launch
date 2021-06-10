@@ -73,8 +73,9 @@ Processing enabled by this node:
   <arg name="color_fps"           default="30"/>
   <arg name="gyro_fps"            default="1000"/>
   <arg name="accel_fps"           default="1000"/>
-  <arg name="enable_imu"          default="true"/>
+  <arg name="depth_throttle_rate" default="$(arg depth_fps)"/>
 
+  <arg name="enable_imu"          default="true"/>
   <arg name="enable_pointcloud"   default="false"/>
   <arg name="enable_sync"         default="true"/>
   <arg name="align_depth"         default="true"/>
@@ -206,7 +207,7 @@ Processing enabled by this node:
         </node>
 
         <!-- Throttle -->
-        <node pkg="topic_tools" type="throttle" name="depth_throttler" args="messages $(arg depth)/image_rect_raw 3" />
+        <node pkg="topic_tools" type="throttle" name="depth_throttler" args="messages $(arg depth)/image_rect_raw $(arg depth_throttle_rate)" />
 
         <!-- Publish registered XYZ IR point cloud with hardware registered input (ROS Realsense depth alignment) -->
         <node pkg="nodelet" type="nodelet" name="points_xyz_ir1_hw_registered"
