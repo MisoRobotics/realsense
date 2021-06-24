@@ -41,6 +41,7 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>tf</exec_depend>
+  <exec_depend>topic_tools</exec_depend>
 
   <test_depend>roslaunch</test_depend>
 
